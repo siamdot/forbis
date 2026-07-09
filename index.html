@@ -11,24 +11,23 @@
     rel="stylesheet">
   <style>
     :root {
-      --paper: #EAEBE1;
-      --paper-deep: #DEDFCF;
-      --paper-card: #F4F5EC;
-      --ink: #1D2430;
-      --ink-soft: #626878;
-      --ink-faint: #9498A2;
-      --line: #CBCDBA;
-      --pencil: #C98A2E;
-      --pencil-dark: #A66E1E;
-      --pencil-tint: #F3E3C6;
-      --verify: #3B6A8C;
-      --verify-tint: #DCE7EE;
-      --mark: #1D2430;
-      --nomark: #A8412B;
-      --nomark-tint: #F3DBD3;
-      --ok: #2F6B4F;
-      --ok-tint: #DCE9E1;
-      --shadow: 0 1px 0 rgba(29, 36, 48, 0.06), 0 8px 20px rgba(29, 36, 48, 0.07);
+      --paper: #FAFAF9;
+      --paper-deep: #F3F2F0;
+      --paper-card: #FFFFFF;
+      --ink: #1A1A1A;
+      --ink-soft: #555555;
+      --ink-faint: #999999;
+      --line: #E5E5E5;
+      --pencil: #2563EB;
+      --pencil-dark: #1D4ED8;
+      --pencil-tint: #EFF6FF;
+      --verify: #7C3AED;
+      --verify-tint: #F3E8FF;
+      --nomark: #DC2626;
+      --nomark-tint: #FEE2E2;
+      --ok: #059669;
+      --ok-tint: #ECFDF5;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -42,9 +41,7 @@
     }
 
     body {
-      background-color: var(--paper);
-      background-image: radial-gradient(circle, var(--line) 1px, transparent 1px);
-      background-size: 22px 22px;
+      background: #FAFAF9;
       color: var(--ink);
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
@@ -75,124 +72,110 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding: 48px 24px;
+      padding: 60px 24px;
     }
 
     .setup-wrap {
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
     }
 
     .setup-card {
       background: var(--paper-card);
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 12px;
       box-shadow: var(--shadow);
-      padding: 36px 32px 32px;
-      position: relative;
-    }
-
-    .setup-card::before {
-      content: "";
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      right: 14px;
-      bottom: 14px;
-      border: 1px dashed var(--line);
-      border-radius: 3px;
-      pointer-events: none;
+      padding: 40px 32px;
     }
 
     .eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: .14em;
+      font-size: 12px;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--pencil-dark);
-      margin: 0 0 6px;
-      font-weight: 600;
+      color: var(--pencil);
+      margin: 0 0 8px;
+      font-weight: 700;
     }
 
     .setup-card h1 {
-      font-size: 26px;
-      margin: 0 0 4px;
-      font-weight: 700;
-      letter-spacing: -.01em;
+      font-size: 32px;
+      margin: 0 0 8px;
+      font-weight: 800;
+      letter-spacing: -.02em;
     }
 
     .setup-card p.sub {
-      margin: 0 0 26px;
+      margin: 0 0 32px;
       color: var(--ink-soft);
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .field {
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .field label {
       display: block;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .07em;
+      letter-spacing: .05em;
       color: var(--ink-soft);
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     .field input {
       width: 100%;
-      padding: 11px 12px;
+      padding: 12px 14px;
       border: 1.5px solid var(--line);
-      border-radius: 4px;
+      border-radius: 8px;
       background: #fff;
-      font-size: 15px;
+      font-size: 16px;
       font-family: 'IBM Plex Mono', monospace;
       color: var(--ink);
       outline: none;
-      transition: border-color .15s ease;
+      transition: all .2s ease;
     }
 
     .field input:focus {
-      border-color: var(--ink);
+      border-color: var(--pencil);
+      box-shadow: 0 0 0 3px var(--pencil-tint);
     }
 
     .row-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 16px;
     }
 
     .total-hint {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
+      font-size: 13px;
       color: var(--pencil-dark);
       background: var(--pencil-tint);
-      border-radius: 4px;
-      padding: 8px 10px;
-      margin: -2px 0 18px;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: -4px 0 24px;
     }
 
     .start-btn {
       width: 100%;
-      margin-top: 4px;
-      padding: 13px 16px;
+      padding: 14px 20px;
       border: none;
-      border-radius: 4px;
-      background: var(--ink);
-      color: var(--paper-card);
+      border-radius: 8px;
+      background: var(--pencil);
+      color: #fff;
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: .01em;
+      font-weight: 700;
+      font-size: 16px;
       cursor: pointer;
-      transition: transform .12s ease, background .15s ease;
+      transition: all .2s ease;
     }
 
     .start-btn:hover {
-      background: #2b3446;
+      background: var(--pencil-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
     }
 
     .start-btn:active {
@@ -201,20 +184,20 @@
 
     .error-msg {
       color: var(--nomark);
-      font-size: 12.5px;
-      margin-top: 8px;
+      font-size: 13px;
+      margin-top: 12px;
       display: none;
     }
 
     .history-wrap {
-      margin-top: 28px;
+      margin-top: 40px;
     }
 
     .history-head {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .history-head .eyebrow {
@@ -222,25 +205,24 @@
     }
 
     .history-head .count {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
+      font-size: 12px;
       color: var(--ink-faint);
     }
 
     .history-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .history-item {
       background: var(--paper-card);
       border: 1px solid var(--line);
-      border-radius: 5px;
-      padding: 14px 16px;
+      border-radius: 10px;
+      padding: 16px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .hi-main {
@@ -250,14 +232,13 @@
 
     .hi-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 14.5px;
-      margin-bottom: 3px;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
     }
 
     .hi-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--ink-faint);
       display: flex;
       align-items: center;
@@ -267,10 +248,10 @@
 
     .pill {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 20px;
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: .04em;
       text-transform: uppercase;
     }
@@ -282,7 +263,7 @@
 
     .pill.draft {
       background: var(--pencil-tint);
-      color: var(--pencil-dark);
+      color: var(--pencil);
     }
 
     .hi-actions {
@@ -292,22 +273,20 @@
     }
 
     .hi-btn {
-      padding: 7px 13px;
-      border-radius: 4px;
+      padding: 8px 14px;
+      border-radius: 6px;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      border: 1.5px solid var(--line);
+      border: 1px solid var(--line);
       background: #fff;
       color: var(--ink);
+      transition: all .15s ease;
     }
 
     .hi-btn:hover {
       border-color: var(--ink);
-    }
-
-    .hi-btn.copy {
-      font-family: 'IBM Plex Mono', monospace;
+      background: #fafaf9;
     }
 
     .hi-btn.copy.copied {
@@ -318,26 +297,26 @@
 
     #main-screen {
       display: none;
-      padding-bottom: 130px;
+      padding-bottom: 160px;
     }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(234, 235, 225, 0.94);
-      backdrop-filter: blur(6px);
+      background: #fff;
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
-      padding: 14px 20px;
+      padding: 16px 20px;
     }
 
     .topbar-inner {
-      max-width: 1040px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
@@ -349,29 +328,27 @@
 
     .who .name {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
+      font-weight: 800;
+      font-size: 18px;
     }
 
     .who .meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
+      font-size: 12px;
       color: var(--ink-soft);
     }
 
     .mode-pill {
-      font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: .05em;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 20px;
     }
 
     .mode-pill.fill {
       background: var(--pencil-tint);
-      color: var(--pencil-dark);
+      color: var(--pencil);
     }
 
     .mode-pill.verify {
@@ -398,7 +375,7 @@
 
     .progress-track {
       flex: 1;
-      height: 6px;
+      height: 5px;
       background: var(--line);
       border-radius: 3px;
       overflow: hidden;
@@ -408,34 +385,35 @@
       height: 100%;
       width: 0%;
       background: var(--pencil);
-      transition: width .25s ease, background .25s ease;
+      transition: width .3s ease;
     }
 
     .progress-pct {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
+      font-size: 12px;
       color: var(--ink-soft);
-      min-width: 34px;
+      min-width: 40px;
       text-align: right;
+      font-weight: 700;
     }
 
     .edit-link {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
+      font-size: 12px;
       color: var(--ink-soft);
       background: none;
       border: none;
       cursor: pointer;
       text-decoration: underline;
       padding: 0;
+      transition: .2s;
     }
 
     .edit-link:hover {
-      color: var(--ink);
+      color: var(--pencil);
     }
 
     .set-tabs {
-      max-width: 1040px;
+      max-width: 1100px;
       margin: 14px auto 0;
       padding: 0 20px;
       display: flex;
@@ -444,22 +422,22 @@
     }
 
     .set-tab {
-      font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
-      padding: 7px 13px;
+      padding: 7px 12px;
       border-radius: 20px;
-      border: 1.5px solid var(--line);
-      background: var(--paper-card);
+      border: 1px solid var(--line);
+      background: #fff;
       color: var(--ink-soft);
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 6px;
+      transition: all .15s;
     }
 
     .set-tab .dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--line);
       flex-shrink: 0;
@@ -482,88 +460,78 @@
     }
 
     .set-tab.active {
-      border-color: var(--ink);
-      color: var(--ink);
-      font-weight: 600;
-      background: #fff;
+      border-color: var(--pencil);
+      color: var(--pencil);
+      font-weight: 700;
+      background: var(--pencil-tint);
     }
 
     .notice {
-      max-width: 1040px;
-      margin: 16px auto 0;
-      padding: 12px 18px;
-      border-radius: 5px;
-      font-size: 13px;
+      max-width: 1100px;
+      margin: 18px auto 0;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: 14px;
       line-height: 1.5;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .notice.verify {
       background: var(--verify-tint);
-      color: #213c50;
-      border: 1px solid #b9cfdd;
+      color: #5B21B6;
+      border: 1px solid #DDD6FE;
     }
 
     .notice.resolve {
       background: var(--nomark-tint);
-      color: #6e2a1a;
-      border: 1px solid #e3b7a8;
+      color: #7F1D1D;
+      border: 1px solid #FECACA;
     }
 
     .notice.done {
       background: var(--ok-tint);
-      color: #1c4531;
-      border: 1px solid #b5d3c2;
-    }
-
-    .notice strong {
-      font-weight: 700;
+      color: #065F46;
+      border: 1px solid #BBFBEE;
     }
 
     .sheet {
-      max-width: 1040px;
-      margin: 22px auto 0;
+      max-width: 1100px;
+      margin: 24px auto 0;
       padding: 0 20px;
     }
 
     .sheet-title {
-      font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      letter-spacing: .14em;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--ink-faint);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
     .q-panel {
       background: var(--paper-card);
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 12px;
       box-shadow: var(--shadow);
-      padding: 6px 0;
+      padding: 0;
       columns: 1;
-      column-gap: 0;
     }
 
-    @media (min-width:720px) {
+    @media(min-width:900px) {
       .q-panel {
         columns: 2;
-      }
-    }
-
-    @media (min-width:1180px) {
-      .q-panel {
-        columns: 3;
+        column-gap: 0;
       }
     }
 
     .q-row {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 11px 18px;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px 18px;
       border-bottom: 1px solid var(--line);
       break-inside: avoid-column;
     }
@@ -572,51 +540,41 @@
       border-bottom: none;
     }
 
-    .q-num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: 13.5px;
-      color: var(--ink-faint);
-      width: 32px;
-      flex-shrink: 0;
-    }
-
-    .q-row.answered .q-num {
+    .q-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
       color: var(--ink);
-    }
-
-    .q-row.locked {
-      opacity: .92;
     }
 
     .bubbles {
       display: flex;
-      gap: 7px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .bubble {
-      width: 40px;
-      height: 30px;
-      border-radius: 6px;
-      border: 1.6px solid var(--line);
+      width: 52px;
+      height: 42px;
+      border-radius: 8px;
+      border: 1.8px solid var(--line);
       background: #fff;
-      color: var(--ink-soft);
+      color: var(--ink);
       font-family: 'IBM Plex Mono', monospace;
-      font-weight: 600;
-      font-size: 12px;
+      font-weight: 700;
+      font-size: 15px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform .1s ease, border-color .12s ease, background .12s ease, color .12s ease;
-      position: relative;
+      transition: all .12s ease;
       flex-shrink: 0;
     }
 
     .bubble:hover {
-      border-color: var(--ink-soft);
-      transform: translateY(-1px);
+      border-color: var(--pencil);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     }
 
     .bubble:focus-visible {
@@ -629,23 +587,15 @@
     }
 
     .bubble.selected {
-      background: var(--mark);
-      border-color: var(--mark);
-      color: var(--paper-card);
-      transform: scale(1.05);
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+      transform: scale(1.08);
     }
 
     .bubble.selected.opt-x {
       background: var(--nomark);
       border-color: var(--nomark);
-    }
-
-    .bubble[disabled] {
-      cursor: default;
-    }
-
-    .bubble[disabled]:hover {
-      transform: none;
     }
 
     .q-row.mode-verify .bubble.selected {
@@ -654,10 +604,11 @@
     }
 
     .q-row.conflict {
-      flex-direction: column;
       align-items: stretch;
-      gap: 8px;
+      gap: 10px;
       background: var(--nomark-tint);
+      border-radius: 8px;
+      padding: 14px 16px;
     }
 
     .conflict-head {
@@ -666,12 +617,16 @@
       gap: 10px;
     }
 
+    .conflict-label {
+      font-weight: 700;
+      font-size: 13px;
+    }
+
     .conflict-chip {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10.5px;
-      font-weight: 600;
+      font-size: 10px;
+      font-weight: 700;
       padding: 3px 8px;
-      border-radius: 4px;
+      border-radius: 5px;
     }
 
     .conflict-chip.first {
@@ -681,12 +636,7 @@
 
     .conflict-chip.second {
       background: var(--verify-tint);
-      color: var(--verify);
-    }
-
-    .conflict-hint {
-      font-size: 11.5px;
-      color: #6e2a1a;
+      color: #7C3AED;
     }
 
     .action-bar {
@@ -696,12 +646,11 @@
       bottom: 0;
       z-index: 30;
       background: var(--paper-deep);
-      border-top: 1.5px solid var(--line);
-      box-shadow: 0 -6px 18px rgba(29, 36, 48, 0.06);
+      border-top: 1px solid var(--line);
     }
 
     .action-inner {
-      max-width: 1040px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 16px 20px;
       display: flex;
@@ -712,40 +661,39 @@
 
     .action-info {
       flex: 1;
-      min-width: 180px;
+      min-width: 160px;
     }
 
     .action-info .t1 {
-      font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 14.5px;
+      font-size: 14px;
     }
 
     .action-info .t2 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--ink-soft);
       margin-top: 2px;
+      font-family: 'IBM Plex Mono', monospace;
     }
 
     .primary-btn {
-      padding: 12px 22px;
+      padding: 11px 18px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       font-size: 14px;
       cursor: pointer;
-      transition: background .15s ease, transform .1s ease;
+      transition: all .2s ease;
     }
 
     .primary-btn:active {
-      transform: scale(.97);
+      transform: scale(.96);
     }
 
     .primary-btn.pencil {
       background: var(--pencil);
-      color: #211605;
+      color: #fff;
     }
 
     .primary-btn.pencil:hover {
@@ -764,7 +712,7 @@
     }
 
     .primary-btn.verify-c:hover {
-      background: #2c5471;
+      background: #6D28D9;
     }
 
     .primary-btn.verify-c[disabled] {
@@ -773,102 +721,80 @@
       cursor: not-allowed;
     }
 
-    .primary-btn.ok-c {
-      background: var(--ok);
-      color: #fff;
-    }
-
-    .primary-btn.ok-c:hover {
-      background: #245a41;
-    }
-
     .ticket-row {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
       width: 100%;
     }
 
     .stamp {
       flex-shrink: 0;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      border: 2.5px solid var(--ok);
+      border: 2px solid var(--ok);
       color: var(--ok);
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 9px;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      line-height: 1.15;
-      transform: rotate(-9deg);
-      position: relative;
-    }
-
-    .stamp::before {
-      content: "";
-      position: absolute;
-      inset: 5px;
-      border: 1px solid var(--ok);
-      border-radius: 50%;
-      opacity: .55;
+      font-size: 8px;
+      text-align: center;
+      line-height: 1.2;
+      transform: rotate(-12deg);
     }
 
     .ticket-body {
       flex: 1;
-      min-width: 220px;
+      min-width: 200px;
     }
 
     .ticket-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10.5px;
-      letter-spacing: .12em;
+      font-size: 10px;
+      letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--ink-soft);
-      display: block;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+      font-weight: 700;
     }
 
     .ticket-code {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 13px;
+      line-height: 1.4;
       color: var(--ink);
       word-break: break-all;
-      max-height: 70px;
+      max-height: 60px;
       overflow-y: auto;
       background: var(--paper-card);
       border: 1px solid var(--line);
-      border-radius: 4px;
+      border-radius: 6px;
       padding: 8px 10px;
     }
 
     .copy-btn {
       flex-shrink: 0;
-      padding: 12px 20px;
+      padding: 10px 18px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       background: var(--ok);
       color: #fff;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 13.5px;
+      font-size: 13px;
       cursor: pointer;
-      transition: background .15s ease, transform .1s ease;
+      transition: all .2s;
     }
 
     .copy-btn:hover {
-      background: #245a41;
+      background: #047857;
     }
 
     .copy-btn:active {
-      transform: scale(.97);
+      transform: scale(.96);
     }
 
     .copy-btn.copied {
@@ -876,15 +802,14 @@
     }
 
     .copy-btn.secondary {
-      background: var(--ink);
+      background: var(--pencil);
     }
 
     .copy-btn.secondary:hover {
-      background: #2b3446;
+      background: var(--pencil-dark);
     }
 
     .redo-link {
-      font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
       color: var(--ink-soft);
       background: none;
@@ -895,9 +820,9 @@
       flex-shrink: 0;
     }
 
-    @media (max-width:640px) {
+    @media(max-width:700px) {
       .setup-card {
-        padding: 28px 20px 24px;
+        padding: 28px 20px;
       }
 
       .row-2 {
@@ -905,28 +830,18 @@
       }
 
       .q-row {
-        padding: 10px 14px;
-        gap: 10px;
+        padding: 14px 12px;
       }
 
       .bubble {
-        width: 36px;
-        height: 28px;
-        font-size: 11px;
-      }
-
-      .action-inner {
-        flex-direction: column;
-        align-items: stretch;
+        width: 46px;
+        height: 38px;
+        font-size: 13px;
       }
 
       .ticket-row {
         flex-direction: column;
         align-items: stretch;
-      }
-
-      .stamp {
-        align-self: flex-start;
       }
     }
   </style>
@@ -937,34 +852,34 @@
   <div id="setup-screen">
     <div class="setup-wrap">
       <div class="setup-card">
-        <p class="eyebrow">Answer Sheet Setup</p>
-        <h1>Start a new sheet</h1>
-        <p class="sub">Each set offers five options plus <strong>X</strong> for "no answer." Build one set, or repeat
-          the same size across several sets — e.g. six sets of 1–25 for a 150-question sheet.</p>
+        <p class="eyebrow">Create Answer Sheet</p>
+        <h1>Start Now</h1>
+        <p class="sub">Build your answer sheet with customizable sets. Each question has six options: A, B, C, D, E, and
+          X (no answer).</p>
 
         <div class="field">
-          <label for="in-name">Name</label>
-          <input id="in-name" type="text" placeholder="Title" maxlength="60">
+          <label for="in-name">Title</label>
+          <input id="in-name" type="text" placeholder="e.g. Monthly Test" maxlength="60">
         </div>
         <div class="row-2">
           <div class="field">
             <label for="in-setsize">Questions per set</label>
-            <input id="in-setsize" type="number" min="1" max="200" placeholder="e.g. 25">
+            <input id="in-setsize" type="number" min="1" max="200" placeholder="25">
           </div>
           <div class="field">
             <label for="in-numsets">Number of sets</label>
             <input id="in-numsets" type="number" min="1" max="30" value="1">
           </div>
         </div>
-        <div class="total-hint" id="total-hint">Enter a set size to see your total.</div>
+        <div class="total-hint" id="total-hint">Enter a set size to calculate total.</div>
 
-        <button class="start-btn" id="start-btn">Open answer sheet</button>
+        <button class="start-btn" id="start-btn">Start Answer Sheet</button>
         <p class="error-msg" id="error-msg"></p>
       </div>
 
       <div class="history-wrap" id="history-wrap" style="display:none;">
         <div class="history-head">
-          <p class="eyebrow" style="margin:0;">History</p>
+          <p class="eyebrow" style="margin:0;">Recent Sheets</p>
           <span class="count" id="history-count"></span>
         </div>
         <div class="history-list" id="history-list"></div>
@@ -977,7 +892,7 @@
       <div class="topbar-inner">
         <div class="who">
           <span class="name" id="disp-name">—</span>
-          <span class="meta" id="disp-meta">0 questions</span>
+          <span class="meta" id="disp-meta">Loading...</span>
         </div>
         <span class="mode-pill fill" id="mode-pill">Filling</span>
         <div class="progress-wrap">
@@ -986,7 +901,7 @@
           </div>
           <span class="progress-pct" id="progress-pct">0%</span>
         </div>
-        <button class="edit-link" id="edit-link">Save &amp; back to start</button>
+        <button class="edit-link" id="edit-link">Exit</button>
       </div>
     </div>
 
@@ -994,7 +909,7 @@
     <div class="notice" id="notice" style="display:none;"></div>
 
     <div class="sheet">
-      <p class="sheet-title" id="sheet-title-label">First pass — choose your answers</p>
+      <p class="sheet-title" id="sheet-title-label">First Pass</p>
       <div class="q-panel" id="q-panel"></div>
     </div>
   </div>
@@ -1006,9 +921,7 @@
   <script>
     (function () {
       const OPTIONS = ['A', 'B', 'C', 'D', 'E', 'X'];
-
-      let session = null;
-      let history = [];
+      let session = null, history = [];
 
       const setupScreen = document.getElementById('setup-screen');
       const mainScreen = document.getElementById('main-screen');
@@ -1039,51 +952,31 @@
       function genId() { return Date.now() + '-' + Math.random().toString(36).slice(2, 7); }
       function showError(msg) { errorMsg.textContent = msg; errorMsg.style.display = 'block'; }
       function clearError() { errorMsg.style.display = 'none'; }
-      function escapeHtml(s) {
-        return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-      }
-      function fmtDate(ts) {
-        const d = new Date(ts);
-        return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + ' ' +
-          d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
-      }
+      function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+      function fmtDate(ts) { const d = new Date(ts); return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + ' ' + d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' }); }
 
       function updateHint() {
         const s = parseInt(inSetSize.value, 10);
         const n = parseInt(inNumSets.value, 10) || 1;
         if (s && s > 0) {
           const total = s * n;
-          totalHint.textContent = n > 1
-            ? `Total: ${total} questions across ${n} sets of ${s} (e.g. 1–${s}, ${s + 1}–${s * 2}, …).`
-            : `Total: ${total} questions.`;
+          totalHint.textContent = n > 1 ? `${total} questions across ${n} sets of ${s}.` : `${total} questions.`;
         } else {
-          totalHint.textContent = 'Enter a set size to see your total.';
+          totalHint.textContent = 'Enter a set size to calculate total.';
         }
       }
       inSetSize.addEventListener('input', updateHint);
       inNumSets.addEventListener('input', updateHint);
 
-      function makeSet() {
-        return { answers: null, verifyAnswers: null, conflicts: [], mode: 'fill' };
-      }
+      function makeSet() { return { answers: null, verifyAnswers: null, conflicts: [], mode: 'fill' }; }
 
       const STORAGE_ACTIVE = 'mcq_active_session';
       const STORAGE_HISTORY = 'mcq_history';
-      function persistActive() {
-        try { if (session) localStorage.setItem(STORAGE_ACTIVE, JSON.stringify(session)); } catch (e) { }
-      }
-      function clearActiveStorage() {
-        try { localStorage.removeItem(STORAGE_ACTIVE); } catch (e) { }
-      }
-      function loadActiveStorage() {
-        try { const raw = localStorage.getItem(STORAGE_ACTIVE); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
-      }
-      function saveHistoryStorage() {
-        try { localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history)); } catch (e) { }
-      }
-      function loadHistoryStorage() {
-        try { const raw = localStorage.getItem(STORAGE_HISTORY); return raw ? JSON.parse(raw) : []; } catch (e) { return []; }
-      }
+      function persistActive() { try { if (session) localStorage.setItem(STORAGE_ACTIVE, JSON.stringify(session)); } catch (e) { } }
+      function clearActiveStorage() { try { localStorage.removeItem(STORAGE_ACTIVE); } catch (e) { } }
+      function loadActiveStorage() { try { const raw = localStorage.getItem(STORAGE_ACTIVE); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
+      function saveHistoryStorage() { try { localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history)); } catch (e) { } }
+      function loadHistoryStorage() { try { const raw = localStorage.getItem(STORAGE_HISTORY); return raw ? JSON.parse(raw) : []; } catch (e) { return []; } }
 
       function newSession(name, setSize, numSets) {
         const sets = [];
@@ -1092,18 +985,16 @@
           s.answers = new Array(setSize).fill(null);
           sets.push(s);
         }
-        return {
-          id: genId(), name, setSize, numSets, currentSet: 0, sets, updatedAt: Date.now()
-        };
+        return { id: genId(), name, setSize, numSets, currentSet: 0, sets, updatedAt: Date.now() };
       }
 
       startBtn.addEventListener('click', () => {
         const name = inName.value.trim();
         const setSize = parseInt(inSetSize.value, 10);
         const numSets = parseInt(inNumSets.value, 10) || 1;
-        if (!name) { showError('Please enter a name.'); inName.focus(); return; }
-        if (!setSize || setSize < 1 || setSize > 200) { showError('Enter a set size between 1 and 200.'); inSetSize.focus(); return; }
-        if (numSets < 1 || numSets > 30) { showError('Enter a number of sets between 1 and 30.'); inNumSets.focus(); return; }
+        if (!name) { showError('Enter a title.'); inName.focus(); return; }
+        if (!setSize || setSize < 1 || setSize > 200) { showError('Enter questions per set (1-200).'); inSetSize.focus(); return; }
+        if (numSets < 1 || numSets > 30) { showError('Enter number of sets (1-30).'); inNumSets.focus(); return; }
         clearError();
         session = newSession(name, setSize, numSets);
         openMainScreen();
@@ -1111,8 +1002,6 @@
       inName.addEventListener('keydown', e => { if (e.key === 'Enter') startBtn.click(); });
       inSetSize.addEventListener('keydown', e => { if (e.key === 'Enter') startBtn.click(); });
       inNumSets.addEventListener('keydown', e => { if (e.key === 'Enter') startBtn.click(); });
-
-      /* ---------------- History ---------------- */
 
       function rangeLabel(sess, setIndex) {
         const start = setIndex * sess.setSize + 1;
@@ -1141,18 +1030,18 @@
           const item = document.createElement('div');
           item.className = 'history-item';
           item.innerHTML = `
-        <div class="hi-main">
-          <div class="hi-name">${escapeHtml(rec.name)}</div>
-          <div class="hi-meta">
-            <span class="pill ${allDone ? 'verified' : 'draft'}">${allDone ? 'Verified' : 'Draft'}</span>
-            <span>${rec.setSize * rec.numSets} questions · ${rec.numSets} set(s) · ${answeredSets}/${rec.numSets} verified</span>
-            <span>${fmtDate(rec.updatedAt)}</span>
-          </div>
+      <div class="hi-main">
+        <div class="hi-name">${escapeHtml(rec.name)}</div>
+        <div class="hi-meta">
+          <span class="pill ${allDone ? 'verified' : 'draft'}">${allDone ? 'Verified' : 'Draft'}</span>
+          <span>${rec.setSize * rec.numSets} questions · ${answeredSets}/${rec.numSets} verified</span>
+          <span>${fmtDate(rec.updatedAt)}</span>
         </div>
-        <div class="hi-actions">
-          <button class="hi-btn edit" data-id="${rec.id}">Edit</button>
-          <button class="hi-btn copy" data-id="${rec.id}">Copy</button>
-        </div>`;
+      </div>
+      <div class="hi-actions">
+        <button class="hi-btn edit" data-id="${rec.id}">Edit</button>
+        <button class="hi-btn copy" data-id="${rec.id}">Copy</button>
+      </div>`;
           historyList.appendChild(item);
         });
         historyList.querySelectorAll('.hi-btn.edit').forEach(btn => {
@@ -1195,8 +1084,6 @@
         setupScreen.style.display = 'flex';
         renderHistory();
       });
-
-      /* ---------------- Main screen ---------------- */
 
       function cur() { return session.sets[session.currentSet]; }
 
@@ -1263,19 +1150,19 @@
         progressFill.style.background = s.mode === 'done' ? 'var(--ok)' : s.mode === 'verify' ? 'var(--verify)' : s.mode === 'resolve' ? 'var(--nomark)' : 'var(--pencil)';
         progressPct.textContent = pct + '%';
         const setsDone = session.sets.filter(x => x.mode === 'done').length;
-        const setInfo = session.numSets > 1 ? ` · set ${session.currentSet + 1}/${session.numSets} (${rangeLabel(session, session.currentSet)}) · ${setsDone}/${session.numSets} verified` : '';
-        dispMeta.textContent = `${session.setSize * session.numSets} questions${setInfo} · ${answered}/${denom} this set`;
+        const setInfo = session.numSets > 1 ? ` · Set ${session.currentSet + 1}/${session.numSets}` : '';
+        dispMeta.textContent = `${session.setSize * session.numSets} total${setInfo} · ${answered}/${denom} answered`;
       }
 
-      function buildRow(globalNum, currentVal, onPick, disabled) {
+      function buildRow(qNum, currentVal, onPick, disabled) {
         const row = document.createElement('div');
         row.className = 'q-row' + (currentVal ? ' answered' : '');
-        row.dataset.index = globalNum;
+        row.dataset.index = qNum;
 
-        const numEl = document.createElement('div');
-        numEl.className = 'q-num';
-        numEl.textContent = String(globalNum);
-        row.appendChild(numEl);
+        const label = document.createElement('div');
+        label.className = 'q-label';
+        label.textContent = `Question ${qNum}`;
+        row.appendChild(label);
 
         const bubblesEl = document.createElement('div');
         bubblesEl.className = 'bubbles';
@@ -1284,7 +1171,7 @@
           b.className = 'bubble' + (opt === 'X' ? ' opt-x' : '') + (currentVal === opt ? ' selected' : '');
           b.textContent = opt;
           b.dataset.opt = opt;
-          b.setAttribute('aria-label', `Question ${globalNum}, option ${opt}`);
+          b.setAttribute('aria-label', `Question ${qNum}, option ${opt}`);
           if (disabled) { b.disabled = true; }
           else { b.addEventListener('click', () => onPick(opt)); }
           bubblesEl.appendChild(b);
@@ -1293,14 +1180,12 @@
         return row;
       }
 
-      /* ---- FILL ---- */
       function renderFill() {
         const s = cur();
         setModePill('Filling', 'fill');
         notice.style.display = 'none';
-        sheetTitleLabel.textContent = `First pass — set ${rangeLabel(session, session.currentSet)}`;
+        sheetTitleLabel.textContent = `First Pass — Set ${rangeLabel(session, session.currentSet)}`;
         qPanel.innerHTML = '';
-        const base = session.currentSet * session.setSize;
         for (let i = 0; i < session.setSize; i++) {
           const row = buildRow(i + 1, s.answers[i], (opt) => {
             s.answers[i] = (s.answers[i] === opt) ? null : opt;
@@ -1324,11 +1209,10 @@
         actionInner.innerHTML = '';
         const info = document.createElement('div');
         info.className = 'action-info';
-        info.innerHTML = `<div class="t1">${allDone ? 'All questions answered' : 'Fill in every question'}</div>
-      <div class="t2">${answered} of ${session.setSize} answered</div>`;
+        info.innerHTML = `<div class="t1">${allDone ? '✓ Ready to verify' : 'Answer all questions'}</div><div class="t2">${answered} of ${session.setSize}</div>`;
         const btn = document.createElement('button');
         btn.className = 'primary-btn pencil';
-        btn.textContent = 'Verify Answers';
+        btn.textContent = 'Start Verification';
         btn.disabled = !allDone;
         btn.addEventListener('click', startVerify);
         actionInner.appendChild(info);
@@ -1345,16 +1229,14 @@
         render();
       }
 
-      /* ---- VERIFY ---- */
       function renderVerify() {
         const s = cur();
         setModePill('Verifying', 'verify');
         notice.style.display = 'flex';
         notice.className = 'notice verify';
-        notice.innerHTML = '<span>Re-select every answer from memory, without looking at your first pass, to confirm this set.</span>';
-        sheetTitleLabel.textContent = `Second pass — set ${rangeLabel(session, session.currentSet)}`;
+        notice.innerHTML = '<span>Re-answer from memory without checking your first pass.</span>';
+        sheetTitleLabel.textContent = `Second Pass — Set ${rangeLabel(session, session.currentSet)}`;
         qPanel.innerHTML = '';
-        const base = session.currentSet * session.setSize;
         for (let i = 0; i < session.setSize; i++) {
           const row = buildRow(i + 1, s.verifyAnswers[i], (opt) => {
             s.verifyAnswers[i] = (s.verifyAnswers[i] === opt) ? null : opt;
@@ -1378,8 +1260,7 @@
         actionInner.innerHTML = '';
         const info = document.createElement('div');
         info.className = 'action-info';
-        info.innerHTML = `<div class="t1">${allDone ? 'Second pass complete' : 'Re-select every answer'}</div>
-      <div class="t2">${answered} of ${session.setSize} confirmed</div>`;
+        info.innerHTML = `<div class="t1">${allDone ? '✓ Complete' : 'Finish re-answering'}</div><div class="t2">${answered} of ${session.setSize}</div>`;
         const btn = document.createElement('button');
         btn.className = 'primary-btn verify-c';
         btn.textContent = 'Compare';
@@ -1400,27 +1281,24 @@
         else { s.mode = 'resolve'; persistActive(); renderSetTabs(); render(); }
       }
 
-      /* ---- RESOLVE ---- */
       function renderResolve() {
         const s = cur();
         setModePill('Resolving', 'resolve');
         notice.style.display = 'flex';
         notice.className = 'notice resolve';
-        notice.innerHTML = `<span>&#9888;&#65039;</span><span><strong>${s.conflicts.length}</strong> question(s) didn't match between your two passes. Pick the correct answer for each to continue.</span>`;
-        sheetTitleLabel.textContent = `Resolve mismatches — set ${rangeLabel(session, session.currentSet)}`;
+        notice.innerHTML = `<span>${s.conflicts.length} mismatch(es) found. Pick the correct answer for each.</span>`;
+        sheetTitleLabel.textContent = `Resolve Mismatches`;
         qPanel.innerHTML = '';
-        const base = session.currentSet * session.setSize;
         s.conflicts.forEach(i => {
-          const globalNum = i + 1;
           const row = document.createElement('div');
           row.className = 'q-row conflict';
-          row.dataset.index = globalNum;
+          row.dataset.index = i + 1;
 
           const head = document.createElement('div');
           head.className = 'conflict-head';
-          head.innerHTML = `<span class="q-num">${globalNum}</span>
-        <span class="conflict-chip first">1st: ${s.answers[i] || '—'}</span>
-        <span class="conflict-chip second">2nd: ${s.verifyAnswers[i] || '—'}</span>`;
+          head.innerHTML = `<div class="conflict-label">Q${i + 1}</div>
+      <span class="conflict-chip first">1st: ${s.answers[i] || '—'}</span>
+      <span class="conflict-chip second">2nd: ${s.verifyAnswers[i] || '—'}</span>`;
           row.appendChild(head);
 
           const bubblesEl = document.createElement('div');
@@ -1430,25 +1308,17 @@
             b.className = 'bubble' + (opt === 'X' ? ' opt-x' : '');
             b.textContent = opt;
             b.dataset.opt = opt;
-            b.setAttribute('aria-label', `Question ${globalNum}, resolve to ${opt}`);
             b.addEventListener('click', () => resolveConflict(i, opt));
             bubblesEl.appendChild(b);
           });
           row.appendChild(bubblesEl);
-
-          const hint = document.createElement('div');
-          hint.className = 'conflict-hint';
-          hint.textContent = "Tap the correct option — it doesn't have to be one of the two above.";
-          row.appendChild(hint);
-
           qPanel.appendChild(row);
         });
         updateHeader();
         actionInner.innerHTML = '';
         const info = document.createElement('div');
         info.className = 'action-info';
-        info.innerHTML = `<div class="t1">Resolve the highlighted questions</div>
-      <div class="t2">${s.conflicts.length} remaining</div>`;
+        info.innerHTML = `<div class="t1">Resolve mismatches</div><div class="t2">${s.conflicts.length} remaining</div>`;
         actionInner.appendChild(info);
       }
 
@@ -1461,7 +1331,6 @@
         else { persistActive(); render(); }
       }
 
-      /* ---- DONE ---- */
       function finalizeDone() {
         const s = cur();
         s.mode = 'done';
@@ -1476,10 +1345,9 @@
         setModePill('Verified', 'done');
         notice.style.display = 'flex';
         notice.className = 'notice done';
-        notice.innerHTML = '<span>Both passes match on every question in this set. Copy it below, or move to the next set.</span>';
-        sheetTitleLabel.textContent = `Final answers — set ${rangeLabel(session, session.currentSet)}`;
+        notice.innerHTML = '<span>✓ All answers verified! Copy below or move to the next set.</span>';
+        sheetTitleLabel.textContent = `Final Answers`;
         qPanel.innerHTML = '';
-        const base = session.currentSet * session.setSize;
         for (let i = 0; i < session.setSize; i++) {
           const row = buildRow(i + 1, s.answers[i], null, true);
           row.classList.add('locked');
@@ -1493,22 +1361,22 @@
 
         const stamp = document.createElement('div');
         stamp.className = 'stamp';
-        stamp.innerHTML = '&#10003;<br>VERIFIED';
+        stamp.innerHTML = '✓<br>VERIFIED';
 
         const body = document.createElement('div');
         body.className = 'ticket-body';
         const csv = s.answers.join(',');
         body.innerHTML = `<span class="ticket-label">${rangeLabel(session, session.currentSet)} — ${escapeHtml(session.name)}</span>
-      <div class="ticket-code mono">${csv}</div>`;
+    <div class="ticket-code mono">${csv}</div>`;
 
         const copyBtn = document.createElement('button');
         copyBtn.className = 'copy-btn';
-        copyBtn.textContent = 'Copy this set';
+        copyBtn.textContent = 'Copy';
         copyBtn.addEventListener('click', () => {
           copyText(csv, () => {
             copyBtn.textContent = 'Copied ✓';
             copyBtn.classList.add('copied');
-            setTimeout(() => { copyBtn.textContent = 'Copy this set'; copyBtn.classList.remove('copied'); }, 1600);
+            setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1600);
           });
         });
 
@@ -1520,7 +1388,7 @@
         if (hasNext) {
           const nextBtn = document.createElement('button');
           nextBtn.className = 'copy-btn secondary';
-          nextBtn.textContent = `Next set (${rangeLabel(session, session.currentSet + 1)}) →`;
+          nextBtn.textContent = `Next Set →`;
           nextBtn.addEventListener('click', () => {
             session.currentSet += 1;
             persistActive();
@@ -1533,12 +1401,12 @@
           if (allDone) {
             const copyAllBtn = document.createElement('button');
             copyAllBtn.className = 'copy-btn secondary';
-            copyAllBtn.textContent = 'Copy full sheet (all sets)';
+            copyAllBtn.textContent = 'Copy All Sets';
             copyAllBtn.addEventListener('click', () => {
               const full = buildCombinedText(session, true);
               copyText(full, () => {
                 copyAllBtn.textContent = 'Copied ✓';
-                setTimeout(() => { copyAllBtn.textContent = 'Copy full sheet (all sets)'; }, 1600);
+                setTimeout(() => { copyAllBtn.textContent = 'Copy All Sets'; }, 1600);
               });
             });
             ticketRow.appendChild(copyAllBtn);
@@ -1547,7 +1415,7 @@
 
         const redo = document.createElement('button');
         redo.className = 'redo-link';
-        redo.textContent = 'Edit this set';
+        redo.textContent = 'Edit';
         redo.addEventListener('click', () => {
           s.mode = 'fill';
           s.verifyAnswers = null;
@@ -1561,7 +1429,6 @@
         actionInner.appendChild(ticketRow);
       }
 
-      /* ---------------- Startup: restore from storage ---------------- */
       history = loadHistoryStorage();
       const restoredSession = loadActiveStorage();
       if (restoredSession) {
