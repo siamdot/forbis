@@ -143,6 +143,27 @@
       box-shadow: 0 0 0 3px var(--pencil-tint);
     }
 
+    .field textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.6;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--ink);
+      outline: none;
+      resize: vertical;
+      transition: all .2s ease;
+    }
+
+    .field textarea:focus {
+      border-color: var(--pencil);
+      box-shadow: 0 0 0 3px var(--pencil-tint);
+    }
+
     .row-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -180,6 +201,133 @@
 
     .start-btn:active {
       transform: scale(.98);
+    }
+
+    .setup-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .import-toggle {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink-soft);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .import-toggle:hover {
+      border-color: var(--pencil);
+      color: var(--pencil);
+      background: var(--pencil-tint);
+    }
+
+    .import-panel {
+      display: none;
+      margin-top: 14px;
+      animation: fadeIn .2s ease;
+    }
+
+    .import-panel.visible {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mini-toggle {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink-soft);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .mini-toggle:hover {
+      border-color: var(--pencil);
+      color: var(--pencil);
+      background: var(--pencil-tint);
+    }
+
+    .extra-tools {
+      display: none;
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      padding: 12px;
+    }
+
+    .extra-tools.visible {
+      display: block;
+    }
+
+    .extra-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .tool-btn {
+      width: 100%;
+      padding: 9px 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .tool-btn:hover {
+      border-color: var(--pencil);
+      color: var(--pencil);
+      background: var(--pencil-tint);
+    }
+
+    .secondary-btn {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .secondary-btn:hover {
+      border-color: var(--pencil);
+      color: var(--pencil);
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.08);
+    }
+
+    .helper-note {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--ink-faint);
     }
 
     .error-msg {
@@ -307,7 +455,7 @@
       background: #fff;
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
-      padding: 16px 20px;
+      padding: 12px 18px;
     }
 
     .topbar-inner {
@@ -329,20 +477,20 @@
     .who .name {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 800;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .who .meta {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--ink-soft);
     }
 
     .mode-pill {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: .05em;
       text-transform: uppercase;
-      padding: 5px 12px;
+      padding: 4px 9px;
       border-radius: 20px;
     }
 
@@ -369,8 +517,8 @@
     .progress-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
-      min-width: 160px;
+      gap: 8px;
+      min-width: 150px;
     }
 
     .progress-track {
@@ -398,18 +546,20 @@
     }
 
     .edit-link {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--ink-soft);
-      background: none;
-      border: none;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 7px;
       cursor: pointer;
-      text-decoration: underline;
-      padding: 0;
-      transition: .2s;
+      padding: 6px 10px;
+      transition: all .2s ease;
     }
 
     .edit-link:hover {
       color: var(--pencil);
+      border-color: var(--pencil);
+      background: var(--pencil-tint);
     }
 
     .set-tabs {
@@ -422,8 +572,8 @@
     }
 
     .set-tab {
-      font-size: 12px;
-      padding: 7px 12px;
+      font-size: 11px;
+      padding: 6px 10px;
       border-radius: 20px;
       border: 1px solid var(--line);
       background: #fff;
@@ -518,6 +668,56 @@
       box-shadow: var(--shadow);
       padding: 0;
       columns: 1;
+      max-height: calc(100vh - 270px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .q-panel::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .q-panel::-webkit-scrollbar-thumb {
+      background: #d8d8d8;
+      border-radius: 999px;
+    }
+
+    .page-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 2px;
+    }
+
+    .page-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 8px;
+      min-width: 36px;
+      height: 32px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .page-btn:hover {
+      border-color: var(--pencil);
+      color: var(--pencil);
+      background: var(--pencil-tint);
+    }
+
+    .page-status {
+      min-width: 56px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--ink-soft);
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700;
     }
 
     @media(min-width:900px) {
@@ -678,12 +878,12 @@
     }
 
     .primary-btn {
-      padding: 11px 18px;
+      padding: 9px 14px;
       border: none;
       border-radius: 8px;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
       cursor: pointer;
       transition: all .2s ease;
     }
@@ -778,14 +978,14 @@
 
     .copy-btn {
       flex-shrink: 0;
-      padding: 10px 18px;
+      padding: 8px 14px;
       border: none;
       border-radius: 8px;
       background: var(--ok);
       color: #fff;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 12px;
       cursor: pointer;
       transition: all .2s;
     }
@@ -874,7 +1074,37 @@
         </div>
         <div class="total-hint" id="total-hint">Enter a set size to calculate total.</div>
 
-        <button class="start-btn" id="start-btn">Start Answer Sheet</button>
+        <button class="import-toggle" id="import-toggle" type="button">Show paste answer key</button>
+
+        <div class="import-panel" id="import-panel">
+          <div class="field">
+            <label for="in-import-setsize">Questions per block for raw paste</label>
+            <input id="in-import-setsize" type="number" min="1" max="200" value="25" placeholder="25">
+          </div>
+
+          <div class="field">
+            <label for="in-paste">Paste answer key or raw answer list</label>
+            <textarea id="in-paste" placeholder="A,B,B,C,A,D,..."></textarea>
+            <div class="helper-note">Paste a raw list like A,B,C... or formatted blocks like 1-25, 26-50. The app will build the answer key and open it ready to copy.</div>
+          </div>
+
+          <button class="mini-toggle" id="extra-tools-toggle" type="button">More Tools</button>
+          <div class="extra-tools" id="extra-tools">
+            <div class="extra-tools-grid">
+              <button class="tool-btn" type="button" id="tool-split-25">Split 25</button>
+              <button class="tool-btn" type="button" id="tool-split-50">Split 50</button>
+              <button class="tool-btn" type="button" id="tool-clear">Clear</button>
+            </div>
+          </div>
+
+          <div class="setup-actions" style="margin-top: 14px;">
+            <button class="secondary-btn" id="import-btn">Import Answer Key</button>
+          </div>
+        </div>
+
+        <div class="setup-actions" style="margin-top: 14px;">
+          <button class="start-btn" id="start-btn">Start Answer Sheet</button>
+        </div>
         <p class="error-msg" id="error-msg"></p>
       </div>
 
@@ -922,14 +1152,25 @@
   <script>
     (function () {
       const OPTIONS = ['A', 'B', 'C', 'D', 'E', 'X'];
-      let session = null, history = [];
+      const PAGE_SIZE = 10;
+      let session = null, history = [], currentQuestionPage = 0;
 
       const setupScreen = document.getElementById('setup-screen');
       const mainScreen = document.getElementById('main-screen');
       const inName = document.getElementById('in-name');
       const inSetSize = document.getElementById('in-setsize');
       const inNumSets = document.getElementById('in-numsets');
+      const inImportSetSize = document.getElementById('in-import-setsize');
+      const inPaste = document.getElementById('in-paste');
       const totalHint = document.getElementById('total-hint');
+      const importToggle = document.getElementById('import-toggle');
+      const importPanel = document.getElementById('import-panel');
+      const extraToolsToggle = document.getElementById('extra-tools-toggle');
+      const extraTools = document.getElementById('extra-tools');
+      const toolSplit25 = document.getElementById('tool-split-25');
+      const toolSplit50 = document.getElementById('tool-split-50');
+      const toolClear = document.getElementById('tool-clear');
+      const importBtn = document.getElementById('import-btn');
       const startBtn = document.getElementById('start-btn');
       const errorMsg = document.getElementById('error-msg');
 
@@ -971,6 +1212,131 @@
 
       function makeSet() { return { answers: null, verifyAnswers: null, conflicts: [], mode: 'fill' }; }
 
+      function parseAnswerTokens(text) {
+        return text
+          .replace(/\r/g, '')
+          .trim()
+          .replace(/^['"]+|['"]+$/g, '')
+          .split(/[\s,]+/)
+          .map(normalizeAnswerToken)
+          .filter(Boolean);
+      }
+
+      function buildBlocksFromAnswerList(answers, setSize) {
+        if (!setSize || setSize < 1 || setSize > 200) {
+          throw new Error('Enter questions per set (1-200) before importing a raw answer list.');
+        }
+        if (answers.length === 0) {
+          throw new Error('Paste an answer list before importing.');
+        }
+        if (answers.length % setSize !== 0) {
+          throw new Error(`The answer list has ${answers.length} items, which is not divisible by ${setSize}.`);
+        }
+
+        const parsed = [];
+        for (let startIndex = 0; startIndex < answers.length; startIndex += setSize) {
+          const blockAnswers = answers.slice(startIndex, startIndex + setSize);
+          const start = startIndex + 1;
+          const end = startIndex + setSize;
+          parsed.push({ answers: blockAnswers, start, end });
+        }
+        return { setSize, numSets: parsed.length, parsed };
+      }
+
+      function normalizeAnswerToken(token) {
+        return token.replace(/[^A-Za-z]/g, '').toUpperCase();
+      }
+
+      function parseImportedAnswerKey(text) {
+        const cleaned = text
+          .replace(/\r/g, '')
+          .trim()
+          .replace(/^['"]+|['"]+$/g, '');
+        const blocks = cleaned.split(/\n\s*\n+/).map(block => block.trim()).filter(Boolean);
+        if (blocks.length === 0) {
+          throw new Error('Paste an answer key before importing.');
+        }
+
+        const rawBlockSize = parseInt(inImportSetSize.value, 10);
+        const fallbackBlockSize = Number.isFinite(rawBlockSize) && rawBlockSize > 0 ? rawBlockSize : (parseInt(inSetSize.value, 10) || 25);
+
+        const hasRangeLine = blocks.some(block => /\d+\s*-\s*\d+/.test(block));
+        if (!hasRangeLine) {
+          return buildBlocksFromAnswerList(parseAnswerTokens(cleaned), fallbackBlockSize);
+        }
+
+        const parsed = [];
+        let expectedStart = 1;
+        let setSize = null;
+
+        blocks.forEach((block, index) => {
+          const lines = block.split('\n').map(line => line.trim()).filter(Boolean);
+          const firstRangeLineIndex = lines.findIndex(line => /\d+\s*-\s*\d+/.test(line));
+          if (firstRangeLineIndex < 0) {
+            throw new Error(`Block ${index + 1} needs a range line like 1-25.`);
+          }
+
+          const rangeMatch = lines[firstRangeLineIndex].match(/(\d+)\s*-\s*(\d+)/);
+          if (!rangeMatch) {
+            throw new Error(`Block ${index + 1} must start with a range like 1-25.`);
+          }
+
+          const start = parseInt(rangeMatch[1], 10);
+          const end = parseInt(rangeMatch[2], 10);
+          if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) {
+            throw new Error(`Block ${index + 1} has an invalid range.`);
+          }
+          if (start !== expectedStart) {
+            throw new Error(`Block ${index + 1} should start at ${expectedStart}.`);
+          }
+
+          const answers = lines
+            .slice(firstRangeLineIndex + 1)
+            .join(' ')
+            .split(/[\s,]+/)
+            .map(normalizeAnswerToken)
+            .filter(Boolean);
+
+          const rangeSize = end - start + 1;
+          if (answers.length !== rangeSize) {
+            throw new Error(`Block ${index + 1} has ${answers.length} answers but needs ${rangeSize}.`);
+          }
+          if (answers.some(answer => !OPTIONS.includes(answer))) {
+            throw new Error(`Block ${index + 1} contains an invalid option. Use A, B, C, D, E, or X.`);
+          }
+
+          if (setSize === null) {
+            setSize = rangeSize;
+          } else if (setSize !== rangeSize) {
+            throw new Error('All blocks must have the same number of questions.');
+          }
+
+          parsed.push({ answers, start, end });
+          expectedStart = end + 1;
+        });
+
+        return { setSize, numSets: parsed.length, parsed };
+      }
+
+      function buildImportedSession(name, imported) {
+        const sets = imported.parsed.map(block => ({
+          answers: block.answers.slice(),
+          verifyAnswers: block.answers.slice(),
+          conflicts: [],
+          mode: 'done'
+        }));
+
+        return {
+          id: genId(),
+          name,
+          setSize: imported.setSize,
+          numSets: imported.numSets,
+          currentSet: 0,
+          sets,
+          updatedAt: Date.now()
+        };
+      }
+
       const STORAGE_ACTIVE = 'mcq_active_session';
       const STORAGE_HISTORY = 'mcq_history';
       function persistActive() { try { if (session) localStorage.setItem(STORAGE_ACTIVE, JSON.stringify(session)); } catch (e) { } }
@@ -989,6 +1355,34 @@
         return { id: genId(), name, setSize, numSets, currentSet: 0, sets, updatedAt: Date.now() };
       }
 
+      importToggle.addEventListener('click', () => {
+        const isOpen = importPanel.classList.toggle('visible');
+        importToggle.textContent = isOpen ? 'Hide paste answer key' : 'Show paste answer key';
+        if (isOpen) {
+          inPaste.focus();
+        }
+      });
+
+      extraToolsToggle.addEventListener('click', () => {
+        extraTools.classList.toggle('visible');
+        extraToolsToggle.textContent = extraTools.classList.contains('visible') ? 'Hide Tools' : 'More Tools';
+      });
+
+      toolSplit25.addEventListener('click', () => {
+        inImportSetSize.value = '25';
+        inPaste.focus();
+      });
+
+      toolSplit50.addEventListener('click', () => {
+        inImportSetSize.value = '50';
+        inPaste.focus();
+      });
+
+      toolClear.addEventListener('click', () => {
+        inPaste.value = '';
+        inPaste.focus();
+      });
+
       startBtn.addEventListener('click', () => {
         const name = inName.value.trim();
         const setSize = parseInt(inSetSize.value, 10);
@@ -999,6 +1393,23 @@
         clearError();
         session = newSession(name, setSize, numSets);
         openMainScreen();
+      });
+
+      importBtn.addEventListener('click', () => {
+        const name = inName.value.trim() || 'Imported Answer Key';
+        try {
+          clearError();
+          const imported = parseImportedAnswerKey(inPaste.value);
+          inSetSize.value = String(imported.setSize);
+          inNumSets.value = String(imported.numSets);
+          updateHint();
+          session = buildImportedSession(name, imported);
+          saveToHistory();
+          openMainScreen();
+        } catch (err) {
+          showError(err && err.message ? err.message : 'Could not import the pasted answer key.');
+          inPaste.focus();
+        }
       });
       inName.addEventListener('keydown', e => { if (e.key === 'Enter') startBtn.click(); });
       inSetSize.addEventListener('keydown', e => { if (e.key === 'Enter') startBtn.click(); });
@@ -1129,6 +1540,43 @@
         });
       }
 
+      function getVisibleQuestionRange(totalQuestions) {
+        const totalPages = Math.max(1, Math.ceil(totalQuestions / PAGE_SIZE));
+        currentQuestionPage = Math.min(Math.max(currentQuestionPage, 0), totalPages - 1);
+        const start = currentQuestionPage * PAGE_SIZE;
+        const end = Math.min(start + PAGE_SIZE, totalQuestions);
+        return { start, end, totalPages, currentPage: currentQuestionPage };
+      }
+
+      function buildPageNav(totalQuestions, onPrev, onNext) {
+        const { totalPages, currentPage } = getVisibleQuestionRange(totalQuestions);
+        if (totalPages <= 1) return null;
+
+        const nav = document.createElement('div');
+        nav.className = 'page-nav';
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'page-btn';
+        prevBtn.textContent = '←';
+        prevBtn.disabled = currentPage === 0;
+        prevBtn.addEventListener('click', onPrev);
+
+        const status = document.createElement('span');
+        status.className = 'page-status';
+        status.textContent = `${currentPage + 1}/${totalPages}`;
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'page-btn';
+        nextBtn.textContent = '→';
+        nextBtn.disabled = currentPage >= totalPages - 1;
+        nextBtn.addEventListener('click', onNext);
+
+        nav.appendChild(prevBtn);
+        nav.appendChild(status);
+        nav.appendChild(nextBtn);
+        return nav;
+      }
+
       function render() {
         const m = cur().mode;
         if (m === 'fill') renderFill();
@@ -1187,7 +1635,8 @@
         notice.style.display = 'none';
         sheetTitleLabel.textContent = `First Pass — Set ${rangeLabel(session, session.currentSet)}`;
         qPanel.innerHTML = '';
-        for (let i = 0; i < session.setSize; i++) {
+        const { start, end, totalPages } = getVisibleQuestionRange(session.setSize);
+        for (let i = start; i < end; i++) {
           const row = buildRow(i + 1, s.answers[i], (opt) => {
             s.answers[i] = (s.answers[i] === opt) ? null : opt;
             row.classList.toggle('answered', !!s.answers[i]);
@@ -1199,10 +1648,10 @@
           qPanel.appendChild(row);
         }
         updateHeader();
-        updateFillActionBar();
+        updateFillActionBar(totalPages);
       }
 
-      function updateFillActionBar() {
+      function updateFillActionBar(totalPages) {
         const s = cur();
         actionBar.style.display = 'block';
         const answered = s.answers.filter(a => a).length;
@@ -1211,12 +1660,20 @@
         const info = document.createElement('div');
         info.className = 'action-info';
         info.innerHTML = `<div class="t1">${allDone ? '✓ Ready to verify' : 'Answer all questions'}</div><div class="t2">${answered} of ${session.setSize}</div>`;
+
+        const nav = buildPageNav(session.setSize, () => {
+          if (currentQuestionPage > 0) { currentQuestionPage--; render(); }
+        }, () => {
+          if (currentQuestionPage < Math.ceil(session.setSize / PAGE_SIZE) - 1) { currentQuestionPage++; render(); }
+        });
+
         const btn = document.createElement('button');
         btn.className = 'primary-btn pencil';
         btn.textContent = 'Start Verification';
         btn.disabled = !allDone;
         btn.addEventListener('click', startVerify);
         actionInner.appendChild(info);
+        if (nav) actionInner.appendChild(nav);
         actionInner.appendChild(btn);
       }
 
@@ -1238,7 +1695,8 @@
         notice.innerHTML = '<span>Re-answer from memory without checking your first pass.</span>';
         sheetTitleLabel.textContent = `Second Pass — Set ${rangeLabel(session, session.currentSet)}`;
         qPanel.innerHTML = '';
-        for (let i = 0; i < session.setSize; i++) {
+        const { start, end } = getVisibleQuestionRange(session.setSize);
+        for (let i = start; i < end; i++) {
           const row = buildRow(i + 1, s.verifyAnswers[i], (opt) => {
             s.verifyAnswers[i] = (s.verifyAnswers[i] === opt) ? null : opt;
             row.classList.toggle('answered', !!s.verifyAnswers[i]);
@@ -1262,12 +1720,20 @@
         const info = document.createElement('div');
         info.className = 'action-info';
         info.innerHTML = `<div class="t1">${allDone ? '✓ Complete' : 'Finish re-answering'}</div><div class="t2">${answered} of ${session.setSize}</div>`;
+
+        const nav = buildPageNav(session.setSize, () => {
+          if (currentQuestionPage > 0) { currentQuestionPage--; render(); }
+        }, () => {
+          if (currentQuestionPage < Math.ceil(session.setSize / PAGE_SIZE) - 1) { currentQuestionPage++; render(); }
+        });
+
         const btn = document.createElement('button');
         btn.className = 'primary-btn verify-c';
         btn.textContent = 'Compare';
         btn.disabled = !allDone;
         btn.addEventListener('click', compareAnswers);
         actionInner.appendChild(info);
+        if (nav) actionInner.appendChild(nav);
         actionInner.appendChild(btn);
       }
 
@@ -1290,16 +1756,18 @@
         notice.innerHTML = `<span>${s.conflicts.length} mismatch(es) found. Pick the correct answer for each.</span>`;
         sheetTitleLabel.textContent = `Resolve Mismatches`;
         qPanel.innerHTML = '';
-        s.conflicts.forEach(i => {
+        const { start, end } = getVisibleQuestionRange(s.conflicts.length);
+        const visibleConflicts = s.conflicts.slice(start, end);
+        visibleConflicts.forEach((questionIndex) => {
           const row = document.createElement('div');
           row.className = 'q-row conflict';
-          row.dataset.index = i + 1;
+          row.dataset.index = questionIndex + 1;
 
           const head = document.createElement('div');
           head.className = 'conflict-head';
-          head.innerHTML = `<div class="conflict-label">Q${i + 1}</div>
-      <span class="conflict-chip first">1st: ${s.answers[i] || '—'}</span>
-      <span class="conflict-chip second">2nd: ${s.verifyAnswers[i] || '—'}</span>`;
+          head.innerHTML = `<div class="conflict-label">Q${questionIndex + 1}</div>
+      <span class="conflict-chip first">1st: ${s.answers[questionIndex] || '—'}</span>
+      <span class="conflict-chip second">2nd: ${s.verifyAnswers[questionIndex] || '—'}</span>`;
           row.appendChild(head);
 
           const bubblesEl = document.createElement('div');
@@ -1309,7 +1777,7 @@
             b.className = 'bubble' + (opt === 'X' ? ' opt-x' : '');
             b.textContent = opt;
             b.dataset.opt = opt;
-            b.addEventListener('click', () => resolveConflict(i, opt));
+            b.addEventListener('click', () => resolveConflict(questionIndex, opt));
             bubblesEl.appendChild(b);
           });
           row.appendChild(bubblesEl);
@@ -1320,7 +1788,13 @@
         const info = document.createElement('div');
         info.className = 'action-info';
         info.innerHTML = `<div class="t1">Resolve mismatches</div><div class="t2">${s.conflicts.length} remaining</div>`;
+        const nav = buildPageNav(s.conflicts.length, () => {
+          if (currentQuestionPage > 0) { currentQuestionPage--; render(); }
+        }, () => {
+          if (currentQuestionPage < Math.ceil(s.conflicts.length / PAGE_SIZE) - 1) { currentQuestionPage++; render(); }
+        });
         actionInner.appendChild(info);
+        if (nav) actionInner.appendChild(nav);
       }
 
       function resolveConflict(i, opt) {
@@ -1349,7 +1823,8 @@
         notice.innerHTML = '<span>✓ All answers verified! Copy below or move to the next set.</span>';
         sheetTitleLabel.textContent = `Final Answers`;
         qPanel.innerHTML = '';
-        for (let i = 0; i < session.setSize; i++) {
+        const { start, end } = getVisibleQuestionRange(session.setSize);
+        for (let i = start; i < end; i++) {
           const row = buildRow(i + 1, s.answers[i], null, true);
           row.classList.add('locked');
           qPanel.appendChild(row);
@@ -1357,6 +1832,12 @@
         updateHeader();
 
         actionInner.innerHTML = '';
+        const nav = buildPageNav(session.setSize, () => {
+          if (currentQuestionPage > 0) { currentQuestionPage--; render(); }
+        }, () => {
+          if (currentQuestionPage < Math.ceil(session.setSize / PAGE_SIZE) - 1) { currentQuestionPage++; render(); }
+        });
+
         const ticketRow = document.createElement('div');
         ticketRow.className = 'ticket-row';
 
@@ -1392,6 +1873,7 @@
           nextBtn.textContent = `Next Set →`;
           nextBtn.addEventListener('click', () => {
             session.currentSet += 1;
+            currentQuestionPage = 0;
             persistActive();
             renderSetTabs();
             render();
@@ -1421,12 +1903,14 @@
           s.mode = 'fill';
           s.verifyAnswers = null;
           s.conflicts = [];
+          currentQuestionPage = 0;
           persistActive();
           renderSetTabs();
           render();
         });
         ticketRow.appendChild(redo);
 
+        if (nav) actionInner.appendChild(nav);
         actionInner.appendChild(ticketRow);
       }
 
